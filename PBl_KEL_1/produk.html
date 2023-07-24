@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olahraga</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">    
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+</head>
+
+
+<body style="width: auto; background: hsl(180, 79%, 42%);">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+    <div class="container">
+        <a class="nav-link active" aria-current="page" href="dashboard.html">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="Delivery.html">Delivery</a>
+    <li class="nav-item">
+      <a class="nav-link" href="warehouse.html">Warehouse</a>
+    <li class="nav-item">
+      <a class="nav-link" href="distribusi.html">Distribution</a>
+    <li class="nav-item">
+      <a class="nav-link" href="Cs.html">Customer Service</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Kategori Produk
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="pengiriman.html">Pengiriman Express Kargo</a></li>
+        <li><a class="dropdown-item" href="penerimaan.html">Penerima Express Kargo</a></li>
+        <li><a class="dropdown-item" href="produk.html">Katalog Produk</a></li>
+        <li><hr class="dropdown-divider"></li>
+      </ul>
+    </li>
+    </ul>
+  
+      <!-- <div class="icon mt-2 ms-3">
+        <h5>
+          <i class="fas fa-cart-plus ml-3 mr-3 me-2"></i>
+          <i class="fas fa-envelope mr-3 me-2"></i>
+          <i class="fas fa-bell mr-3 me-2"></i>
+        </h5>
+      </div> -->
+      
+  </div>
+</div>
+</nav>
+  <div class="container">
+    <h1>Katalog Produk Logistik</h1>
+    <div class="row" id="product-list">
+      <!-- Daftar Produk akan ditambahkan melalui JavaScript -->
+    </div>
+  </div>
+
+  <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="productModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="productModalDetails"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Daftar produk
+    const products = [
+      {
+        name: "Laptop IF V220",
+        description: "Rp. 1.220.000",
+        image: "Laptop.jpg"
+      },
+      {
+        name: "IF Television",
+        description: "Rp. 899.000",
+        image: "Television.jpg"
+      },
+      {
+        name: "IF Phone",
+        description: "Rp.1.350.000.",
+        image: "Hp.jpg"
+      },
+      {
+        name: "Headset Gaming",
+        description: "Rp. 500.000.",
+        image: "Headseat.jpg"
+      },
+      {
+        name: "Camera",
+        description: "Rp. 2.500.000.",
+        image: "Camera.png"
+      }
+    ];
+
+    // Tambahkan produk ke dalam daftar produk di halaman
+    function renderProducts() {
+      const productList = document.getElementById("product-list");
+
+      products.forEach((product) => {
+        const card = document.createElement("div");
+        card.classList.add("col-md-4");
+
+        const productCard = document.createElement("div");
+        productCard.classList.add("card", "product-card");
+        productCard.style.width = "18rem";
+
+        const img = document.createElement("img");
+        img.src = product.image;
+        img.classList.add("card-img-top");
+        img.alt = product.name;
+
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
+
+        const title = document.createElement("h5");
+        title.classList.add("card-title");
+        title.textContent = product.name;
+
+        const description = document.createElement("p");
+        description.classList.add("card-text");
+        description.textContent = product.description;
+
+        const viewDetailsBtn = document.createElement("button");
+        viewDetailsBtn.classList.add("btn", "btn-primary");
+        viewDetailsBtn.textContent = "View Details";
+        viewDetailsBtn.addEventListener("click", () => openProductModal(product));
+
+        cardBody.appendChild(title);
+        cardBody.appendChild(description);
+        cardBody.appendChild(viewDetailsBtn);
+
+        productCard.appendChild(img);
+        productCard.appendChild(cardBody);
+
+        card.appendChild(productCard);
+        productList.appendChild(card);
+      });
+    }
+
+    // Buka modal dengan detail produk
+    function openProductModal(product) {
+      const modalTitle = document.getElementById("productModalLabel");
+      const modalDetails = document.getElementById("productModalDetails");
+
+      modalTitle.textContent = product.name;
+      modalDetails.innerHTML = `
+        <p>${product.description}</p>
+        <!-- Tambahkan informasi lainnya sesuai kebutuhan -->
+      `;
+
+      $("#productModal").modal("show");
+    }
+
+    // Panggil fungsi untuk menampilkan produk saat halaman dimuat
+    document.addEventListener("DOMContentLoaded", () => {
+      renderProducts();
+    });
+  </script>
+</body>
+
+</html>

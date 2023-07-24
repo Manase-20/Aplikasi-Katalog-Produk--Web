@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Katalog Produk Perusahaan Logistik</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+  
+</head>
+
+<body style="width: auto; background: hsl(180, 79%, 42%);">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Delivery.html">Delivery</a>
+          <li class="nav-item">
+            <a class="nav-link" href="warehouse.html">Warehouse</a>
+          <li class="nav-item">
+            <a class="nav-link" href="distribusi.html">Distribution</a>
+          <li class="nav-item">
+            <a class="nav-link" href="Cs.html">Customer Service</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Kategori Produk
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="pengiriman.html">Pengiriman Express Kargo</a></li>
+              <li><a class="dropdown-item" href="penerimaan.html">Penerima Express Kargo</a></li>
+              <li><a class="dropdown-item" href="produk.html">Katalog Produk</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+            </ul>
+          </li>
+          
+        </ul>
+        
+        <input class="form" type="text" id="searchInput">
+        
+        
+        <button class="btn-primary" type="submit" onclick="search()">Search</button>
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+              <path d="M8 8a2 2 0 1 1-2-2 2 2 0 0 1 2 2zm5 0a5.978 5.978 0 0 1-1.727 4.242A6.058 6.058 0 0 1 8 14c-2.22 0-4.161-1.208-5.273-3.02A5.978 5.978 0 0 1 3 8a5.978 5.978 0 0 1 1.727-4.242A6.058 6.058 0 0 1 8 2c2.22 0 4.161 1.208 5.273 3.02A5.978 5.978 0 0 1 13 8zM8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+            Akun
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="dashboard.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                  <path d="M7 1h2v7H7V1zm3.5 0h1v7h-1V1zm-7 9h2v5H3v-5zm3.5 0h1v5h-1v-5zm3.5 0h2v5h-2v-5zm-7-1h2v2H3v-2zm3.5 0h1v2h-1v-2zm3.5 0h2v2h-2v-2zm-7-1h2v1H3v-1zm6.5 0h1v1h-1v-1zm-5.228 8.96l-.448.448a.25.25 0 0 1-.354 0l-.894-.894a.25.25 0 0 1 0-.354l.448-.448a.25.25 0 0 1 .354 0l.894.894a.25.25 0 0 1 0 .354zm5.656 0l.448.448a.25.25 0 0 1 0 .354l-.894.894a.25.25 0 0 1-.354 0l-.448-.448a.25.25 0 0 1 0-.354l.894-.894a.25.25 0 0 1 .354 0z"/>
+                </svg>
+                Dashboard
+              </a>
+            </li>
+            <li><a class="dropdown-item" href="Profil.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 2a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm0 6c1.5 0 2.8.9 3.4 2.2h-6.8c.6-1.3 1.9-2.2 3.4-2.2zm0 1a3.5 3.5 0 0 0-3.35 2.5H4.5A4.5 4.5 0 0 1 8 8.5a4.5 4.5 0 0 1 3.5 1.5h-.15A3.5 3.5 0 0 0 8 10z"/>
+                </svg>
+                Akun Saya
+              </a>
+            </li>
+            <li><a class="dropdown-item" href="pengaturan.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                  <path d="M9.238 1.045a.5.5 0 0 0-.476 0l-1.147.574a5.5 5.5 0 0 0-1.804-.26l-.316-1.19a.5.5 0 0 0-.95 0l-.316 1.19a5.5 5.5 0 0 0-1.804.26L.238 1.045a.5.5 0 0 0-.238.64l.574 1.147a5.5 5.5 0 0 0-.26 1.804L.19 5.38a.5.5 0 0 0 0 .95l1.19.316a5.5 5.5 0 0 0 .26 1.804L.883 9.762a.5.5 0 0 0 .238.64l1.147-.574a5.5 5.5 0 0 0 1.804.26l.316 1.19a.5.5 0 0 0 .95 0l.316-1.19a5.5 5.5 0 0 0 1.804-.26l1.147.574a.5.5 0 0 0 .238-.64l-.574-1.147a5.5 5.5 0 0 0 .26-1.804l1.19-.316a.5.5 0 0 0 0-.95l-1.19-.316a5.5 5.5 0 0 0-.26-1.804l.574-1.147a.5.5 0 0 0-.238-.64zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg>
+                Pengaturan
+              </a>
+            </li>
+            <li><a class="dropdown-item" href="keluar.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M10.854 8.354a.5.5 0 0 0 0-.708L7.707 4.793a.5.5 0 0 1 0-.708L10.854.854a.5.5 0 0 0-.707-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .707 0zm2.5-3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0 0 1h9a.5.5 0 0 0 .5-.5z"/>
+                  <path fill-rule="evenodd" d="M2.5 4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.646 14.146a.5.5 0 0 1 0-.708L8.793 11H3.5a.5.5 0 0 1 0-1h5.293L5.646 6.854a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708 0z"/>
+                </svg>
+                Keluar
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+          </ul>
+        </li>
+        
+        <script>
+          var programs = [
+            { name: "Delivery", url: "Delivery.html" },
+            { name: "Warehouse", url: "warehouse.html" },
+            { name: "Program C", url: "programC.html" },
+            { name: "Customer service", url: "Cs.html" },
+            { name: "Produk", url: "produk.html" }
+          ];
+
+          function search() {
+            var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            var matchedProgram = programs.find(function (program) {
+              return program.name.toLowerCase().includes(searchTerm);
+            });
+
+            if (matchedProgram) {
+              window.location.href = matchedProgram.url;
+            } else {
+              alert("Program tidak ditemukan");
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </nav>
+
+
+  </div>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar-nav .nav-link {
+      color: #333;
+    }
+
+    section.container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .col-md-4 {
+      margin-bottom: 30px;
+    }
+
+    h5 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  </style>
+  </head>
+
+  <body>
+
+    <section class="container mt-5">
+      <header>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+          }
+
+          header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+          }
+
+          h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+          }
+
+          p {
+            font-size: 18px;
+            margin-bottom: 20px;
+          }
+
+          .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+          }
+
+          .btn:hover {
+            background-color: #0056b3;
+          }
+        </style>
+        <h1>Selamat Datang di Katalog Produk Logistik</h1>
+      </header>
+
+      <p>Temukan beragam solusi logistik dan produk berkualitas tinggi untuk mendukung kebutuhan pengiriman dan rantai
+        pasok Anda </p>
+      </header>
+      <h3>Layanan Unggulan Kami</h3>
+      <div class="card border-primary mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="Lg Darat.png" class="img-fluid rounded-start" alt="">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body bg-light">
+              <h5 class="card-title">Pengiriman Darat</h5>
+              <p class="card-text">Kami menawarkan pengiriman darat yang cepat dan handal di seluruh wilayah Indonesia.
+                Dengan jaringan yang luas, kami dapat mengantarkan barang Anda tepat waktu dan dengan keamanan terjamin.
+              </p>
+              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Lihat
+                Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Pengiriman Darat</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Kami menawarkan pengiriman darat yang cepat dan handal di seluruh wilayah Indonesia. Dengan jaringan
+                yang luas, kami dapat mengantarkan barang Anda tepat waktu dan dengan keamanan terjamin.</p>
+              <p>Kami memahami betapa pentingnya kecepatan dan keandalan dalam pengiriman darat. Oleh karena itu, kami
+                telah mengembangkan jaringan yang luas dan efisien, serta menggunakan armada kendaraan yang modern dan
+                terawat dengan baik.</p>
+              <p>Dalam pengiriman darat, kami memberikan perhatian khusus terhadap keamanan barang. Kami memiliki
+                prosedur yang ketat dalam penanganan dan pemindahan barang, serta mengutamakan pengawasan yang cermat
+                selama proses pengiriman.</p>
+              <p>Kami juga menyediakan layanan pelacakan yang akurat, sehingga Anda dapat memantau perjalanan barang
+                Anda secara real-time. Tim layanan pelanggan kami siap membantu Anda dengan informasi terkini mengenai
+                status pengiriman dan memberikan solusi jika terjadi kendala atau perubahan rencana pengiriman.</p>
+              <p>Dengan pengalaman bertahun-tahun dalam industri logistik, kami telah membangun reputasi sebagai mitra
+                yang terpercaya dan dapat diandalkan dalam pengiriman darat. Baik Anda membutuhkan pengiriman satu kali
+                maupun pengiriman reguler, kami siap memberikan solusi yang sesuai dengan kebutuhan bisnis Anda.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card border-primary mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="Lg udara.png" class="img-fluid rounded-start" alt="">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body bg-light">
+              <h5 class="card-title">Pengiriman Udara</h5>
+              <p class="card-text">Dengan kemitraan bersama maskapai penerbangan terkemuka, kami menyediakan pengiriman
+                udara yang efisien dan cepat ke berbagai tujuan di seluruh dunia. Kami menangani segala jenis kargo,
+                mulai dari barang biasa hingga kargo berbahaya.</p>
+              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Lihat
+                Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Pengiriman Udara</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Dengan kemitraan bersama maskapai penerbangan terkemuka, kami menyediakan pengiriman udara yang efisien
+                dan cepat ke berbagai tujuan di seluruh dunia. Kami menangani segala jenis kargo, mulai dari barang
+                biasa hingga kargo berbahaya.</p>
+              <p>Kami memahami bahwa pengiriman udara membutuhkan kecepatan dan ketepatan waktu. Oleh karena itu, kami
+                bekerja sama dengan maskapai penerbangan yang memiliki jaringan luas dan pengalaman dalam industri ini.
+                Dengan demikian, kami dapat memberikan solusi pengiriman yang tepat, baik untuk pengiriman satu kali
+                maupun secara reguler.</p>
+              <p>Tim profesional kami akan membantu Anda dalam proses pengiriman udara, mulai dari penanganan dokumen
+                hingga pengaturan rute pengiriman terbaik. Kami memiliki pengetahuan yang mendalam tentang persyaratan
+                keamanan dan regulasi pengiriman udara, sehingga Anda dapat memiliki kepercayaan penuh terhadap kami
+                dalam menangani kargo Anda.</p>
+              <p>Kami mampu menangani berbagai jenis kargo, termasuk barang pecah belah, barang bernilai tinggi, dan
+                kargo berbahaya. Kami memiliki fasilitas dan perlengkapan yang sesuai untuk memastikan pengiriman aman
+                dan terjamin. Selain itu, kami juga menyediakan layanan pelacakan yang akurat, sehingga Anda dapat
+                memantau status pengiriman Anda secara real-time.</p>
+              <p>Keunggulan kami meliputi:</p>
+              <ul>
+                <li>Pengiriman udara yang efisien dan cepat.</li>
+                <li>Kemitraan dengan maskapai penerbangan terkemuka.</li>
+                <li>Penanganan segala jenis kargo, termasuk kargo berbahaya.</li>
+                <li>Tim profesional yang berpengalaman dalam pengiriman udara.</li>
+                <li>Layanan pelacakan untuk memantau status pengiriman secara real-time.</li>
+              </ul>
+              <p>Kami berkomitmen untuk memberikan solusi pengiriman udara yang handal dan berkualitas tinggi. Hubungi
+                kami sekarang untuk mendapatkan layanan pengiriman udara yang terbaik sesuai dengan kebutuhan bisnis
+                Anda.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card border-primary mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="Lg Laut.jpeg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body bg-light">
+              <h5 class="card-title">Pengiriman Laut</h5>
+              <p class="card-text">Layanan pengiriman laut kami mencakup pengiriman kontainer, kargo curah, dan
+                pengiriman barang proyek. Dengan jaringan agen global, kami dapat mengatur pengiriman yang aman dan
+                tepat waktu ke destinasi mana pun.</p>
+              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Lihat
+                Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Pengiriman Laut</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Layanan pengiriman laut kami mencakup pengiriman kontainer, kargo curah, dan pengiriman barang proyek.
+                Dengan jaringan agen global, kami dapat mengatur pengiriman yang aman dan tepat waktu ke destinasi mana
+                pun.</p>
+              <p>Kami menyediakan solusi pengiriman laut yang komprehensif untuk memenuhi kebutuhan bisnis Anda. Dalam
+                pengiriman kontainer, kami mengutamakan efisiensi dan keamanan, serta memberikan layanan pengemasan dan
+                pengisian kontainer yang profesional.</p>
+              <p>Kami juga memiliki pengalaman dalam pengiriman kargo curah seperti biji-bijian, batu bara, dan bahan
+                baku industri lainnya. Selain itu, kami dapat membantu Anda dalam pengiriman barang proyek yang
+                membutuhkan perhatian khusus.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  
+
+
+
+  </body>
+  <script src="js/bootstrap.js"></script>
+
+</html>

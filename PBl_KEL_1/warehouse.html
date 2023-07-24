@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Katalog Produk Perusahaan Logistik</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+<body style="width: auto; background: hsl(180, 79%, 42%);">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+           
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="dashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Delivery.html">Delivery</a>
+              <li class="nav-item">
+                <a class="nav-link" href="warehouse.html">Warehouse</a>
+              <li class="nav-item">
+                <a class="nav-link" href="distribusi.html">Distribution</a>
+              <li class="nav-item">
+                <a class="nav-link" href="Cs.html">Customer Service</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Kategori Produk
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="pengiriman.html">Pengiriman Express Kargo</a></li>
+                  <li><a class="dropdown-item" href="penerimaan.html">Penerima Express Kargo</a></li>
+                  <li><a class="dropdown-item" href="produk.html">Katalog Produk</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              
+            </ul>
+           
+          
+          </div>
+        </div>
+      </nav>
+
+      
+      </div>
+
+      <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+}
+
+section.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.col-md-4 {
+  margin-bottom: 30px;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+      </style>
+    </head>
+    <body>
+        <div class="container">
+          <h1>Warehouse</h1>
+      
+          <!-- Pencarian Warehouse -->
+          <form>
+            <div class="form-group">
+              <label for="location">Lokasi:</label>
+              <input type="text" class="form-control" id="location" placeholder="Masukkan lokasi">
+            </div>
+            <div class="form-group">
+              <label for="item">Jenis Barang:</label>
+              <input type="text" class="form-control" id="item" placeholder="Masukkan jenis barang">
+            </div>
+            <div class="form-group">
+              <label for="quantity">Jumlah Barang:</label>
+              <input type="number" class="form-control" id="quantity" placeholder="Masukkan jumlah barang">
+            </div>
+            <div class="form-group">
+                <label for="metode_pengiriman">Metode Pengiriman:</label>
+                <select class="form-control" id="metode_pengiriman">
+                  <option value="darat">Darat</option>
+                  <option value="laut">Laut</option>
+                  <option value="udara">Udara</option>
+                </select>
+              </div>
+              <!-- <div class="form-group">
+                <label for="waktu_pengiriman">Waktu Pengiriman:</label>
+                <input type="date" class="form-control" id="waktu_pengiriman">
+              </div>
+              <div class="form-group">
+                <label for="keterangan">Keterangan:</label>
+                <textarea class="form-control" id="keterangan" rows="4" placeholder="Masukkan keterangan tambahan"></textarea>
+              </div> -->
+                            
+            <button type="button" class="btn btn-primary" onclick="searchWarehouse()">Cari</button>
+          </form>
+          
+      
+          <!-- Daftar Warehouse -->
+          <div id="result"></div>
+      
+          <!-- Detail Warehouse -->
+          <div id="warehouseDetails"></div>
+      
+          <!-- Pemesanan Warehouse -->
+          <div id="bookingForm"></div>
+        </div>
+      
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script>
+          // Fungsi untuk melakukan pencarian warehouse
+          function searchWarehouse() {
+            var location = $('#location').val();
+            var item = $('#item').val();
+            var quantity = $('#quantity').val();
+            var metode_pengiriman= $('#metode').val();
+      
+            // Lakukan kueri atau panggil API untuk mendapatkan hasil pencarian
+      
+            // Contoh hasil pencarian
+            var warehouses = [
+              {
+                name: 'Warehouse 1',
+                location: 'Jakarta',
+                capacity: '500m²',
+                items: ['Barang A', 'Barang B'],
+                quantity: ['10 pcs'],
+                metode:'darat',
+                availability: true
+              },
+              {
+                name: 'Warehouse 2',
+                location: 'Surabaya',
+                capacity: '1000m²',
+                items: ['Barang B', 'Barang C'],
+                quantity: ['10 pcs'],
+                metode:['darat','laut','udara'],
+                availability: false
+              }
+            ];
+      
+            var result = '';
+            var selectElement = document.getElementById('metode_pengiriman');
+            for (var i = 0; i < warehouses.length; i++) {
+              result += '<div class="card mb-3">';
+              result += '<div class="card-body">';
+              result += '<h5 class="card-title">' + warehouses[i].name + '</h5>';
+              result += '<p class="card-text">Lokasi: ' + warehouses[i].location + '</p>';
+              result += '<p class="card-text">Kapasitas: ' + warehouses[i].capacity + '</p>';
+              result += '<p class="card-text">Metode Pengiriman: ' + warehouses[i].metode + '</p>';
+              result += '<p class="card-text">Jenis Barang: ' + warehouses[i].items.join(', ') + '</p>';
+              result += '<p class="card-text">Jumlah Barang: ' + warehouses[i].quantity.join(', ') + '</p>';
+              result += '<p class="card-text">Ketersediaan: ' + (warehouses[i].availability ? 'Tersedia' : 'Tidak Tersedia') + '</p>';
+              result += '<button class="btn btn-primary" onclick="showWarehouseDetails(' + i + ')">Lihat Detail</button>';
+              result += '</div></div>';
+            }
+      
+            $('#result').html(result);
+          }
+      
+          // Fungsi untuk menampilkan detail warehouse
+          function showWarehouseDetails(index) {
+            var warehouse = warehouses[index];
+      
+            var details = '<h2>' + warehouse.name + '</h2>';
+            details += '<p>Lokasi: ' + warehouse.location + '</p>';
+            details += '<p>Kapasitas: ' + warehouse.capacity + '</p>';
+            details += '<p>Jenis Barang: ' + warehouse.items.join(', ') + '</p>';
+            details += '<p>Ketersediaan: ' + (warehouse.availability ? 'Tersedia' : 'Tidak Tersedia') + '</p>';
+            details += '<button class="btn btn-primary" onclick="showBookingForm(' + index + ')">Pesan Warehouse</button>';
+      
+            $('#warehouseDetails').html(details);
+          }
+      
+          // Fungsi untuk menampilkan formulir pemesanan warehouse
+          function showBookingForm(index) {
+            var form = '<h2>Formulir Pemesanan</h2>';
+            form += '<form>';
+            form += '<div class="form-group">';
+            form += '<label for="start">Tanggal Mulai:</label>';
+            form += '<input type="date" class="form-control" id="start">';
+            form += '</div>';
+            form += '<div class="form-group">';
+            form += '<label for="end">Tanggal Berakhir:</label>';
+            form += '<input type="date" class="form-control" id="end">';
+            form += '</div>';
+            form += '<div class="form-group">';
+            form += '<label for="quantity">Jumlah Barang:</label>';
+            form += '<input type="number" class="form-control" id="quantity" min="1">';
+            form += '</div>';
+            form += '<div class="form-group">';
+            form += '<label for="contact">Informasi Kontak:</label>';
+            form += '<input type="text" class="form-control" id="contact">';
+            form += '</div>';
+            form += '<button type="button" class="btn btn-primary" onclick="submitBooking(' + index + ')">Submit</button>';
+            form += '</form>';
+      
+            $('#bookingForm').html(form);
+          }
+      
+          // Fungsi untuk menangani pengiriman pemesanan
+          function submitBooking(index) {
+            var start = $('#start').val();
+            var end = $('#end').val();
+            var quantity = $('#quantity').val();
+            var contact = $('#contact').val();
+      
+            // Lakukan pengiriman pemesanan ke server atau backend
+      
+            alert('Pemesanan berhasil dikirim!');
+          }
+        </script>
+      </body>
+<script src="js/bootstrap.js"></script>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Katalog Produk Perusahaan Logistik</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+<body style="width: auto; background: hsl(180, 79%, 42%);">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+           
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="dashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Delivery.html">Delivery</a>
+              <li class="nav-item">
+                <a class="nav-link" href="warehouse.html">Warehouse</a>
+              <li class="nav-item">
+                <a class="nav-link" href="distribusi.html">Distribution</a>
+              <li class="nav-item">
+                <a class="nav-link" href="Cs.html">Customer Service</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Kategori Produk
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="pengiriman.html">Pengiriman Express Kargo</a></li>
+                  <li><a class="dropdown-item" href="penerimaan.html">Penerima Express Kargo</a></li>
+                  <li><a class="dropdown-item" href="produk.html">Katalog Produk</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              
+            </ul>
+          
+          </div>
+        </div>
+      </nav>
+
+      
+      </div>
+
+      <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+}
+
+section.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.col-md-4 {
+  margin-bottom: 30px;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h2>Program Perusahaan Logistik</h2>
+        <label for="trackingNumber">Nomor Pelacakan:</label>
+        <input type="text" id="trackingNumber" placeholder="Masukkan nomor pelacakan...">
+        <button onclick="track()">Lacak</button>
+    
+        <div class="shipping-info">
+          <h4>Informasi Pengiriman:</h4>
+          <p id="deliveryInfo"></p>
+          <p id="trackingStatus"></p>
+          <p id="estimatedCost"></p>
+          <p id="serviceOptions"></p>
+          <p id="orderTracking"></p>
+          <p id="contactInfo"></p>
+          <p id="productGallery"></p>
+          <p id="reviews"></p>
+        </div>
+      </div>
+    
+      <script>
+        var shippingData = {
+          deliveryInfo: "Cara Pengiriman: Pengiriman udara, Waktu Pengiriman Estimasi: 3-5 hari",
+          trackingStatus: "Status Pengiriman: Sedang Dalam Perjalanan",
+          estimatedCost: "Estimasi Biaya: Rp 500.000",
+          serviceOptions: "Pilihan Layanan: Pengiriman Kilat, Asuransi Tersedia",
+          orderTracking: "Pemesanan dan Pelacakan Online: Tersedia",
+          contactInfo: "Informasi Kontak: Hubungi kami di 123-456-789 atau email@example.com",
+          productGallery: "Galeri Gambar dan Deskripsi: Tampilkan gambar dan deskripsi produk",
+          reviews: "Ulasan dan Penilaian: Baca ulasan dan penilaian dari pelanggan sebelumnya"
+        };
+    
+        function track() {
+          var trackingNumber = document.getElementById("trackingNumber").value;
+          var deliveryInfo = document.getElementById("deliveryInfo");
+          var trackingStatus = document.getElementById("trackingStatus");
+          var estimatedCost = document.getElementById("estimatedCost");
+          var serviceOptions = document.getElementById("serviceOptions");
+          var orderTracking = document.getElementById("orderTracking");
+          var contactInfo = document.getElementById("contactInfo");
+          var productGallery = document.getElementById("productGallery");
+          var reviews = document.getElementById("reviews");
+    
+          deliveryInfo.innerHTML = "";
+          trackingStatus.innerHTML = "";
+          estimatedCost.innerHTML = "";
+          serviceOptions.innerHTML = "";
+          orderTracking.innerHTML = "";
+          contactInfo.innerHTML = "";
+          productGallery.innerHTML = "";
+          reviews.innerHTML = "";
+    
+          deliveryInfo.textContent = shippingData.deliveryInfo;
+          trackingStatus.textContent = shippingData.trackingStatus;
+          estimatedCost.textContent = shippingData.estimatedCost;
+          serviceOptions.textContent = shippingData.serviceOptions;
+          orderTracking.textContent = shippingData.orderTracking;
+          contactInfo.textContent = shippingData.contactInfo;
+          productGallery.textContent = shippingData.productGallery;
+          reviews.textContent = shippingData.reviews;
+        }
+      </script>
+    </body>
+<script src="js/bootstrap.js"></script>
+</html>

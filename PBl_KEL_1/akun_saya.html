@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Katalog Produk Logistik</title>
+  <style>
+    /* Tambahkan gaya khusus di sini */
+  </style>
+  <script>
+    function login() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      if (email === "admin@example.com" && password === "password") {
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Email atau password tidak valid. Silakan coba lagi.");
+      }
+    }
+
+    // Menambahkan interaksi untuk menu dropdown
+    function toggleDropdown() {
+      var dropdownMenu = document.getElementById("dropdownMenu");
+      dropdownMenu.classList.toggle("show");
+    }
+
+    // Menutup dropdown saat pengguna mengklik di luar dropdown
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-toggle')) {
+        var dropdowns = document.getElementsByClassName("dropdown-menu");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+  <header>
+    <!-- Bagian header seperti sebelumnya -->
+  </header>
+
+  <section class="jumbotron text-center">
+    <!-- Bagian jumbotron seperti sebelumnya -->
+  </section>
+
+  <section class="container">
+    <!-- Bagian produk unggulan seperti sebelumnya -->
+  </section>
+
+  <footer class="bg-light text-center py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Informasi Akun</h4>
+          <ul class="list-unstyled">
+            <li><a href="#">Profil Saya</a></li>
+            <li><a href="#">Pengaturan</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Keluar</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h4>Fitur Terkait</h4>
+          <ul class="list-unstyled">
+            <li><a href="#">Lacak Pengiriman</a></li>
+            <li><a href="#">Cek Harga</a></li>
+            <li><a href="#">Bantuan</a></li>
+          </ul>
+        </div>
+      </div>
+      <p>Hak Cipta © 2023 Perusahaan Logistik. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="loginModal" tabindex="-1" role="dialog">
+    <!-- Bagian modal login seperti sebelumnya -->
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

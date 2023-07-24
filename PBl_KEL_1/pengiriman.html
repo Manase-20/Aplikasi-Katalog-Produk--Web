@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Katalog Produk Perusahaan Logistik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body style="width: auto; background: hsl(180, 79%, 42%);">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+           
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="dashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Delivery.html">Delivery</a>
+              <li class="nav-item">
+                <a class="nav-link" href="warehouse.html">Warehouse</a>
+              <li class="nav-item">
+                <a class="nav-link" href="distribusi.html">Distribution</a>
+              <li class="nav-item">
+                <a class="nav-link" href="Cs.html">Customer Service</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Kategori Produk
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="pengiriman.html">Pengiriman Express Kargo</a></li>
+                  <li><a class="dropdown-item" href="penerimaan.html">Penerima Express Kargo</a></li>
+                  <li><a class="dropdown-item" href="produk.html">Katalog Produk</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              
+            </ul>
+           
+        
+          </div>
+        </div>
+      </nav>
+
+      
+      </div>
+
+      <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+}
+
+section.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.col-md-4 {
+  margin-bottom: 30px;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+      </style>
+    </head>
+    <body style="width: auto; background: hsl(180, 79%, 42%);">
+      <div class="container">
+        <h1>Selamat datang di Express Kargo</h1>
+        
+        <h2>Pengiriman</h2>
+        <form id="formPengiriman" action="proses_pengiriman.php" method="post">
+          <div class="form-group">
+            <label for="nama_pengirim">Nama Pengirim:</label>
+            <input type="text" class="form-control" id="nama_pengirim" name="nama_pengirim" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="alamat_pengirim">Alamat Pengirim:</label>
+            <input type="text" class="form-control" id="alamat_pengirim" name="alamat_pengirim" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="berat_barang">Berat Barang (kg):</label>
+            <input type="number" class="form-control" id="berat_barang" name="berat_barang" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="jenis_barang">Jenis Barang:</label>
+            <select class="form-control" id="jenis_barang" name="jenis_barang">
+              <option value="Elektronik">Elektronik</option>
+              <option value="Pakaian">Pakaian</option>
+              <option value="Makanan">Makanan</option>
+              <option value="Dokumen">Dokumen</option>
+            </select>
+          </div>
+    
+          <div class="form-group">
+            <label for="metode_pengiriman">Metode Pengiriman:</label>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="reguler" name="metode_pengiriman" value="Reguler" required>
+              <label class="form-check-label" for="reguler">Reguler</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="cepat" name="metode_pengiriman" value="Cepat">
+              <label class="form-check-label" for="cepat">Cepat</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="darat" name="metode_pengiriman" value="Darat">
+              <label class="form-check-label" for="darat">Darat</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="laut" name="metode_pengiriman" value="Laut">
+              <label class="form-check-label" for="laut">Laut</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="udara" name="metode_pengiriman" value="Udara">
+              <label class="form-check-label" for="udara">Udara</label>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Kirim</button>
+          </form>
+          </div>
+          
+      
+    
+<script>
+  // Program JavaScript untuk menghubungkan formulir pengiriman dengan server atau tindakan lainnya
+
+// Mendapatkan referensi ke elemen-elemen formulir
+const formPengiriman = document.getElementById("formPengiriman");
+const namaPengirim = document.getElementById("nama_pengirim");
+const alamatPengirim = document.getElementById("alamat_pengirim");
+const beratBarang = document.getElementById("berat_barang");
+const jenisBarang = document.getElementById("jenis_barang");
+const metodePengirimanReguler = document.getElementById("reguler");
+const metodePengirimanCepat = document.getElementById("cepat");
+
+// Menangani pengiriman formulir
+formPengiriman.addEventListener("submit", function (event) {
+  event.preventDefault(); // Mencegah pengiriman formulir secara default
+
+  // Mengumpulkan data dari formulir
+  const dataPengiriman = {
+    nama_pengirim: namaPengirim.value,
+    alamat_pengirim: alamatPengirim.value,
+    berat_barang: beratBarang.value,
+    jenis_barang: jenisBarang.value,
+    metode_pengiriman: metodePengirimanReguler.checked ? "Reguler" : "Cepat",
+  };
+
+  // Kirim data ke server atau lakukan tindakan lain sesuai kebutuhan
+  // Anda dapat menggunakan metode AJAX atau fetch API untuk mengirim data
+
+  // Contoh penggunaan fetch API untuk mengirim data dengan metode POST ke server
+  fetch("proses_pengiriman.php", {
+    method: "POST",
+    body: JSON.stringify(dataPengiriman),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then(function (response) {
+      // Handle response dari server
+      if (response.ok) {
+        // Jika respons sukses (status code 200-299)
+        console.log("Pengiriman berhasil");
+        // Lakukan tindakan sesuai kebutuhan, seperti menampilkan notifikasi atau mengarahkan pengguna ke halaman terkait
+      } else {
+        // Jika respons gagal (status code di luar 200-299)
+        console.log("Pengiriman gagal");
+        // Lakukan tindakan sesuai kebutuhan, seperti menampilkan pesan kesalahan kepada pengguna
+      }
+    })
+    .catch(function (error) {
+      // Handle error yang terjadi saat pengiriman data
+      console.log("Terjadi kesalahan:", error);
+      // Lakukan tindakan sesuai kebutuhan, seperti menampilkan pesan kesalahan kepada pengguna
+    });
+});
+
+</script>      
+    </body>
+<script src="js/bootstrap.js"></script>
+</html>

@@ -1,46 +1,36 @@
-Berikut adalah contoh isi file README untuk website katalog produk perusahaan logistik:
+# Aplikasi Katalog Produk - Logistik
 
-# Katalog Produk Perusahaan Logistik
+Proyek ini dikembangkan pada Semester 2 perkuliahan untuk membangun aplikasi katalog produk perusahaan logistik. Aplikasi ini bertujuan untuk menampilkan daftar produk dan layanan yang ditawarkan oleh perusahaan logistik secara online.
 
-Ini adalah repository untuk website katalog produk perusahaan logistik. Website ini menyediakan informasi tentang berbagai produk dan solusi logistik yang ditawarkan oleh perusahaan.
+## Fitur Utama
+- Beranda: Informasi utama tentang perusahaan logistik
+- Daftar Produk: Menampilkan produk beserta deskripsi dan gambar
+- Pencarian Produk: Mencari produk berdasarkan kata kunci
+- Tentang Kami: Visi, misi, dan profil perusahaan
+- Kontak: Formulir dan informasi kontak perusahaan
 
-## Fitur
+## Status Proyek
+⏳ 70% selesai — sebagian fitur masih dalam pengembangan (misalnya validasi form dan integrasi database penuh)
 
-- Beranda: Menampilkan informasi utama tentang perusahaan dan menawarkan pengguna untuk menjelajahi produk dan solusi logistik.
-- Produk: Menampilkan daftar produk logistik beserta deskripsi, gambar, dan detail terkait.
-- Tentang Kami: Menyajikan informasi tentang perusahaan, sejarah, visi, dan misi.
-- Kontak: Memberikan informasi kontak perusahaan, seperti alamat, nomor telepon, dan alamat email untuk pertanyaan atau permintaan informasi lebih lanjut.
+## Teknologi yang Digunakan
+- HTML, CSS, JavaScript
+- PHP (Native)
+- MySQL (untuk manajemen database)
 
-## Instalasi
-
-Berikut adalah langkah-langkah untuk menginstal proyek ini di lingkungan lokal Anda:
-
-1. Pastikan Anda memiliki PHP dan server web yang terinstal di komputer Anda.
-2. Salin semua file dari repositori ini ke direktori root server web Anda.
-3. Konfigurasikan pengaturan koneksi ke database, jika diperlukan, dengan mengedit file `config.php`.
-4. Buka browser dan akses website dengan alamat `http://localhost/nama_folder`.
-
-## Kontribusi
-
-Kami menerima kontribusi dari pengembang lain. Jika Anda ingin berkontribusi pada proyek ini, ikuti langkah-langkah berikut:
-
-1. Fork repository ini.
-2. Buat branch baru untuk fitur atau perbaikan yang ingin Anda lakukan.
-3. Lakukan perubahan yang diperlukan di branch baru Anda.
-4. Kirimkan permintaan tarik (pull request) ke branch utama repository ini.
-
-Pastikan untuk mengikuti panduan kontribusi yang telah ditetapkan dalam file CONTRIBUTING.md untuk memudahkan proses kolaborasi.
+## Cara Instalasi (Lokal)
+1. Pastikan sudah menginstal XAMPP / server PHP & MySQL.
+2. Clone atau unduh proyek ini ke `htdocs/`.
+3. Buat database `db_logistik` di phpMyAdmin.
+4. Sesuaikan konfigurasi koneksi database di `index.php`.
+5. Jalankan di browser: `http://localhost/nama_folder`.
 
 ## Lisensi
-
 Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 
 ## Kontak
+Untuk pertanyaan, hubungi kami melalui email: **info@perusahaanlogistik.com**  
+Atau kunjungi: [www.perusahaanlogistik.com](http://www.perusahaanlogistik.com)
 
-Jika Anda memiliki pertanyaan atau masukan terkait proyek ini, silakan hubungi kami melalui email di info@perusahaanlogistik.com atau kunjungi website kami di www.perusahaanlogistik.com.
+---
 
-Terima kasih telah menggunakan katalog produk perusahaan logistik!
-
-**Hak Cipta © 2023 Perusahaan Logistik. Seluruh hak cipta dilindungi.**
-
-Pastikan untuk menyesuaikan konten README dengan informasi yang sesuai untuk proyek Anda, seperti alamat email, link website, dan deskripsi yang relevan.
+© 2023 Perusahaan Logistik — Seluruh hak cipta dilindungi.

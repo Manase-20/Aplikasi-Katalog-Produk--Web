@@ -24,13 +24,3 @@ Proyek ini dikembangkan pada Semester 2 perkuliahan untuk membangun aplikasi kat
 4. Sesuaikan konfigurasi koneksi database di `index.php`.
 5. Jalankan di browser: `http://localhost/nama_folder`.
 
-## Lisensi
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
-
-## Kontak
-Untuk pertanyaan, hubungi kami melalui email: **info@perusahaanlogistik.com**  
-Atau kunjungi: [www.perusahaanlogistik.com](http://www.perusahaanlogistik.com)
-
----
-
-© 2023 Perusahaan Logistik — Seluruh hak cipta dilindungi.

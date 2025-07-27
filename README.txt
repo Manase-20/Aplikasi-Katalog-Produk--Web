@@ -10,7 +10,7 @@ Proyek ini dikembangkan pada Semester 2 perkuliahan untuk membangun aplikasi kat
 - Kontak: Formulir dan informasi kontak perusahaan
 
 ## Status Proyek
-⏳ 70% selesai — sebagian fitur masih dalam pengembangan (misalnya validasi form dan integrasi database penuh)
+⏳ 70% selesai — sebagian fitur masih dalam pengembangan 
 
 ## Teknologi yang Digunakan
 - HTML, CSS, JavaScript
